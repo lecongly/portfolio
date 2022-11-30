@@ -1,0 +1,22 @@
+[
+  {
+    "path": "/",
+    "name": "Home"
+  },
+  {
+    "path": "/about",
+    "name": "About"
+  },
+  {
+    "path": "/portfolio",
+    "name": "Portfolio"
+  },
+  {
+    "path": "/blog",
+    "name": "Blog"
+  },
+  {
+    "path": "/cv.pdf",
+    "name": "CV"
+  }
+]

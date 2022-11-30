@@ -1,8 +1,7 @@
-
 export default function Home() {
-  return (
-    <div >
-      Hello
-    </div>
-  )
+    return (
+        <div className="h-screen w-screen bg-gray-200">
+            lcl
+        </div>
+    );
 }
