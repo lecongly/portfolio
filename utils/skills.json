@@ -1,0 +1,34 @@
+[
+  {
+    "name": "Soft Skills",
+    "skills": [
+      "Communicative",
+      "Team worker",
+      "Emphatic",
+      "Open Mindedness",
+      "Collaborative",
+      "Curious"
+    ]
+  },
+  {
+    "name": "Technical Skills",
+    "skills": [
+      "JavaScript",
+      "TypeScript",
+      "ReactJS",
+      "NodeJS",
+      "Java",
+      "Mongoose",
+      "SQL",
+      "Tailwindcss"
+    ]
+  },
+  {
+    "name": "Other Skills",
+    "skills": [
+      "GIT",
+      "Firebase"
+    ]
+  }
+]
+

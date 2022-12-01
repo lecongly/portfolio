@@ -1,0 +1,13 @@
+[
+  {
+    "id": 1,
+    "company": "LCL Company",
+    "role": "Frontend Developer",
+    "date": "Jul 2022 - Sep 2022",
+    "url": "",
+    "activities": [
+      "Design of a platform that allow the management of new artist through a virtual manager.",
+      "Apply technologies that enable scalability and integration of new features."
+    ]
+  }
+]
