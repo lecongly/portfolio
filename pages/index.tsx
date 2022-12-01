@@ -1,7 +1,10 @@
+import Layout from '@components/layout';
+import Banner from '@components/homepage/Banner';
+
 export default function Home() {
     return (
-        <div className="h-screen w-screen bg-gray-200">
-            lcl
-        </div>
+        <Layout>
+            <Banner/>
+        </Layout>
     );
 }
