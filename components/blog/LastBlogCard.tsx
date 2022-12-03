@@ -12,7 +12,7 @@ const LastBlogCard = ({createdAt, author, title, tags, url}: BlogPost) => {
         day: 'numeric',
     };
     return (
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 border">
+        <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-6 border">
             <div className="md:col-span-1 h-full flex items-center justify-center overflow-hidden relative md:border-r">
                 <div
                     className="absolute h-12 w-12 top-3 left-3 rounded-md bg-white dark:bg-neutral-900 z-40 flex items-center justify-center text-2xl">

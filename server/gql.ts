@@ -25,3 +25,20 @@ export const discussionGql = (ghDiscussionCategoryId: string | undefined) => {
   }
 }`;
 };
+
+export function discussionDetailGql(postId: number | undefined) {
+    return `{
+    repository(owner: "lecongly", name: "portfolio") {
+      discussion(number: ${postId}) {
+        title
+        bodyHTML
+        createdAt
+        author {
+          login
+          url
+          avatarUrl
+        }
+      }
+    }
+  }`;
+}
