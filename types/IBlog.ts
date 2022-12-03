@@ -11,7 +11,7 @@ export interface BlogDetail {
 
 export interface BlogPost {
     id?: number
-    url?: string
+    url: string
     discussionUrl?: string
     title: string
     html?: string
