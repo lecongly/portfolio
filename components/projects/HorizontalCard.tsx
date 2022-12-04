@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import {FiExternalLink, FiGithub} from 'react-icons/fi';
 import {AppContext} from '../../context/AppContext';
+import {motion} from "framer-motion";
 
 interface Props {
     project: IProject;
@@ -13,8 +14,18 @@ interface Props {
 };
 const HorizontalCard = ({current, project, index, setCurrent}: Props) => {
     const {cursorEnter, cursorLeave} = useContext(AppContext);
+    const initX = (index % 2 === 0) ? 1000 : -1000;
     return (
-        <div
+        <motion.div
+            initial={{
+                x: initX,
+                opacity: 0
+            }}
+            animate={{
+                x: 0,
+                opacity: 1,
+                transition: {duration: 0.75, delay: index * 0.25}
+            }}
             onMouseEnter={() => setCurrent(index)}
             onMouseLeave={() => setCurrent(null)}
             className="w-full my-5 block md:flex odd:flex-row even:flex-row-reverse items-center justify-between
@@ -121,7 +132,7 @@ const HorizontalCard = ({current, project, index, setCurrent}: Props) => {
                     </Link>
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 };
 

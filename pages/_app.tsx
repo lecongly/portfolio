@@ -11,7 +11,9 @@ export default function App({Component, pageProps: {session, ...pageProps}, rout
         <ThemeProvider enableSystem={true} attribute="class">
             <AppProvider>
                 <Header/>
-                <AnimatePresence initial={false}>
+                <AnimatePresence
+                    initial={true}
+                >
                     <Component {...pageProps} key={router.asPath}/>
                 </AnimatePresence>
                 <Footer/>

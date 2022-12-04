@@ -1,3 +1,4 @@
+import {motion} from 'framer-motion';
 import Link from 'next/link';
 import {BsArrowRight} from 'react-icons/bs';
 
@@ -13,11 +14,12 @@ const Title = ({title, url}: Props) => {
             </h1>
             {url && (
                 <Link href={url}>
-                    <div
+                    <motion.div
+                        animate={{x: 10, transition: {repeat: Infinity, duration: 1}}}
                         className="flex items-center justify-center py-2 px-6 border-2 border-transparent hover:border-zinc-50 dark:hover:border-zinc-800 duration-200">
                         <span className="text-base mr-2">View all</span>
                         <BsArrowRight/>
-                    </div>
+                    </motion.div>
                 </Link>
             )}
         </div>

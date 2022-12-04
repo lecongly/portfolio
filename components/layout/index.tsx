@@ -31,7 +31,14 @@ const Layout = ({children}: Props) => {
     };
     return (
         <>
-            <main className={'mx-auto w-full bg-white dark:bg-neutral-900'}>{children}</main>
+            <motion.div
+                className={'mx-auto w-full bg-white dark:bg-neutral-900'}
+                initial={{y: -50, opacity: 0}}
+                animate={{y: 0, opacity: 1}}
+                transition={{duration: 0.5}}
+            >
+                {children}
+            </motion.div>
             <motion.div
                 className={`pointer-events-none fixed lg:top-0 xl:top-0 lg:left-0 xl:left-0 rounded-full  ${
                     cursor === 'text'
