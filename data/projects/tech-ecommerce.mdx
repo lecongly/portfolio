@@ -1,0 +1,53 @@
+---
+date: 'July 25, 2022'
+title: 'TechEcommerce'
+description: 'Ecommerce focused on the technology market with payment processing through Paypal Checkout and cookie authentication.'
+cover_image: '/static/projects/TechEcommerce/TechEcommerce_Cover.webp'
+github_url: 'https://github.com/lecongly/TechEcommerce'
+categories: ['Side Project']
+tags: ['Ecommerce', 'Web Development']
+technologies: ['NextJS', 'SWR', 'TypeScript', 'TailwindCSS']
+---
+
+<ProjectNavigation
+    routes={[
+        {name: 'About', id: 'about'},
+        {name: 'Challenges', id: 'challenges'},
+        {name: 'User Flow', id: 'user_flow'},
+        {name: 'Wireframes', id: 'wireframes'},
+    ]}
+/>
+
+<Introduction
+    categories={['Side Project']}
+    title="TechEcommerce"
+    imageUrl="/static/projects/TechEcommerce/TechEcommerce_Cover.webp"
+/>
+
+<About
+    tags={['Ecommerce', 'Web Development']}
+    technologies={['NextJS', 'SWR', 'TypeScript', 'TailwindCSS']}
+    github_url="https://github.com/lecongly/TechEcommerce"
+    summary={[
+        'Ecommerce focused on the technology market with payment processing through Paypal Checkout and cookie authentication.',
+    ]}
+/>
+
+<Challenges
+    principal="Establish a connection with Paypal Checkout for payment processing without leaving the website."
+    specifics={[
+        'Keeping a minimalist style without neglecting the user experience.',
+        'The user will be able to save his products in a cart or in a wish list and will be able to see them every time he logs in.',
+    ]}
+/>
+
+<UserFlow imageUrl="/static/projects/TechEcommerce/User_Flow.png"/>
+
+<Wireframe
+    type="web"
+    frame={[
+        {image: '/static/projects/TechEcommerce/Home.webp', imageTitle: 'Home Page'},
+        {image: '/static/projects/TechEcommerce/ShoppingCart.webp', imageTitle: 'Shopping Cart Page'},
+        {image: '/static/projects/TechEcommerce/WishList.webp', imageTitle: 'Wish List Page'},
+    ]}
+/>

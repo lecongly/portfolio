@@ -1,13 +1,13 @@
 import React, {useState} from 'react';
-import {IProjects} from '../../types/IProject';
+import {IProject, IProjects} from '../../types/IProject';
 import {NextPage} from 'next';
 import Layout from '@components/layout';
-import {projects} from 'data/projects';
 
 import Title from '@components/core/Title';
 import HorizontalCard from '@components/projects/HorizontalCard';
+import {getAllFilesMetadata} from '../../lib/mdx';
 
-const ProjectsPage: NextPage<IProjects> = () => {
+const ProjectsPage: NextPage<IProjects> = ({projects}) => {
     const [current, setCurrent] = useState<number | null>(null);
     return (
         <Layout>
@@ -30,3 +30,13 @@ const ProjectsPage: NextPage<IProjects> = () => {
 };
 
 export default ProjectsPage;
+
+export async function getStaticProps() {
+    const projects = await getAllFilesMetadata('projects');
+    const organizedProjects = projects.sort((a: IProject, b: IProject) => {
+        return new Date(b.date).getTime() - new Date(a.date).getTime();
+    });
+    return {
+        props: {projects: organizedProjects},
+    };
+}

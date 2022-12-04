@@ -1,9 +1,13 @@
 import React, {useState} from 'react';
 import Card from '@components/projects/Card';
-import {projects} from 'data/projects';
 import Title from '@components/core/Title';
+import {IProject} from '../../types/IProject';
 
-const Projects = () => {
+type Props = {
+    projects: IProject[];
+};
+
+const Projects = ({projects}: Props) => {
     const [current, setCurrent] = useState<number | null>(null);
     return (
         <section className="mx-auto container px-5 flex flex-col items-center justify-center">

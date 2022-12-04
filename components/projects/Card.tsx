@@ -51,7 +51,8 @@ const Card = ({current, project, index, setCurrent}: CardProps) => {
                             <h2 className="text-2xl tracking-wide font-semibold mt-1">{title}</h2>
                         </motion.div>)}
                 </AnimatePresence>
-                <Image src={cover_image} alt={title} width={680} height={480} quality={100}/>
+                <Image src={cover_image} alt={title} width={680} height={480} quality={100}
+                       className="w-full h-full object-contain"/>
             </motion.div>
 
         </Link>
