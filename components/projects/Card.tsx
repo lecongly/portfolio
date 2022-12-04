@@ -1,8 +1,9 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import Link from 'next/link';
 import {AnimatePresence, motion} from "framer-motion";
 import Image from 'next/image';
 import {IProject} from 'types/IProject';
+import {AppContext} from '../../context/AppContext';
 
 interface CardProps {
     project: IProject;
@@ -13,13 +14,16 @@ interface CardProps {
 
 const Card = ({current, project, index, setCurrent}: CardProps) => {
     const {categories, cover_image, slug, title} = project;
+    const {cursorEnter, cursorLeave} = useContext(AppContext);
 
     const MouseIsEnter = () => {
         setCurrent(index);
+        cursorEnter();
     };
 
     const MouseIsLeave = () => {
         setCurrent(null);
+        cursorLeave();
     };
     return (
         <Link href={`/projects/${slug}`}>

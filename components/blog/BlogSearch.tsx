@@ -1,4 +1,5 @@
-import React from 'react';
+import {AppContext} from 'context/AppContext';
+import React, {useContext} from 'react';
 import {AiOutlineSearch} from 'react-icons/ai';
 
 interface Props {
@@ -6,9 +7,12 @@ interface Props {
 }
 
 const BlogSearch = ({setSearchedArticles}: Props) => {
+    const {cursorEnter, cursorLeave} = useContext(AppContext);
     return (
         <div
             className="relative mb-12 max-w-xl w-full "
+            onMouseEnter={() => cursorEnter()}
+            onMouseLeave={() => cursorLeave()}
         >
             <input
                 type="text"

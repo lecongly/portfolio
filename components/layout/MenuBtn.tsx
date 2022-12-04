@@ -1,14 +1,19 @@
+import {useContext} from 'react';
+import {AppContext} from 'context/AppContext';
+
 interface Props {
     isOpen: boolean;
     setIsOpen: (arg: boolean) => void;
 }
 
 const MenuBtn = ({isOpen, setIsOpen}: Props) => {
-
+    const {cursorEnter, cursorLeave} = useContext(AppContext);
     return (
         <div
             className="h-9 w-9 cursor-pointer  flex items-center justify-center ml-4 "
             onClick={() => setIsOpen(!isOpen)}
+            onMouseEnter={() => cursorEnter()}
+            onMouseLeave={() => cursorLeave()}
         >
             <div
                 className={`before:duration-300 after:duration-300 relative w-full h-1 ${

@@ -1,6 +1,4 @@
 import React from 'react';
-import {Link as LocalLink} from 'react-scroll/modules';
-import {BsArrowDownLeft} from 'react-icons/bs';
 import Title from '@components/core/Title';
 
 const QuickAbout = () => {

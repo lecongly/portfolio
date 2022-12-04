@@ -5,12 +5,15 @@ import Link from 'next/link';
 import {networks} from 'utils/networks';
 import {useTheme} from 'next-themes';
 import {Theme} from './Theme';
+import {useContext} from 'react';
+import {AppContext} from '../../context/AppContext';
 
 type Props = {
     setIsOpen: (arg: boolean) => void;
 };
 
 const Drawer = ({setIsOpen}: Props) => {
+    const {cursorEnter, cursorLeave} = useContext(AppContext);
     const {theme} = useTheme();
     const {pathname} = useRouter();
     return (
@@ -54,6 +57,8 @@ const Drawer = ({setIsOpen}: Props) => {
                                         }}
                                         exit={{opacity: 0}}
                                         onClick={() => setIsOpen(false)}
+                                        onMouseEnter={() => cursorEnter()}
+                                        onMouseLeave={() => cursorLeave()}
                                         className="my-2 sm:my-3 md:my-4 lg:my-5 ml-0 sm:ml-12 first:mt-2"
                                     >
                                   <span
@@ -90,6 +95,8 @@ const Drawer = ({setIsOpen}: Props) => {
                                     }}
                                     exit={{opacity: 0}}
                                     className="flex flex-row items-center justify-start"
+                                    onMouseEnter={() => cursorEnter()}
+                                    onMouseLeave={() => cursorLeave()}
                                 >
                                     <div
                                         className="h-10 w-10 flex items-center justify-center rounded-md mr-0 sm:mr-3 "

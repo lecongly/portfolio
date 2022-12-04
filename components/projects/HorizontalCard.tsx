@@ -1,8 +1,9 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {IProject} from '../../types/IProject';
 import Link from 'next/link';
 import Image from 'next/image';
 import {FiExternalLink, FiGithub} from 'react-icons/fi';
+import {AppContext} from '../../context/AppContext';
 
 interface Props {
     project: IProject;
@@ -11,6 +12,7 @@ interface Props {
     index: number;
 };
 const HorizontalCard = ({current, project, index, setCurrent}: Props) => {
+    const {cursorEnter, cursorLeave} = useContext(AppContext);
     return (
         <div
             onMouseEnter={() => setCurrent(index)}
@@ -21,6 +23,8 @@ const HorizontalCard = ({current, project, index, setCurrent}: Props) => {
             <Link href={`/projects/${project.slug}`}>
                 <div
                     className="flex items-center justify-center w-full h-full overflow-hidden rounded-lg"
+                    onMouseEnter={() => cursorEnter()}
+                    onMouseLeave={() => cursorLeave()}
                 >
                     <Image
                         className={`duration-150 rounded-lg ${current === index ? 'scale-100' : 'scale-95'}`}
@@ -76,6 +80,8 @@ const HorizontalCard = ({current, project, index, setCurrent}: Props) => {
                             target="_blank"
                             rel="noreferrer noopener"
                             href={project.external_url}
+                            onMouseEnter={() => cursorEnter()}
+                            onMouseLeave={() => cursorLeave()}
                         >
                             <FiExternalLink/>
                         </a>
@@ -86,6 +92,8 @@ const HorizontalCard = ({current, project, index, setCurrent}: Props) => {
                             target="_blank"
                             rel="noreferrer noopener"
                             href={project.host_url}
+                            onMouseEnter={() => cursorEnter()}
+                            onMouseLeave={() => cursorLeave()}
                         >
                             <FiExternalLink/>
                         </a>
@@ -96,6 +104,8 @@ const HorizontalCard = ({current, project, index, setCurrent}: Props) => {
                             target="_blank"
                             rel="noreferrer noopener"
                             href={project.github_url}
+                            onMouseEnter={() => cursorEnter()}
+                            onMouseLeave={() => cursorLeave()}
                         >
                             <FiGithub/>
                         </a>
@@ -103,6 +113,8 @@ const HorizontalCard = ({current, project, index, setCurrent}: Props) => {
                     <Link href={`/projects/${project.slug}`}>
                         <div
                             className="px-6 py-3 rounded-lg bg-violet-600 text-white"
+                            onMouseEnter={() => cursorEnter()}
+                            onMouseLeave={() => cursorLeave()}
                         >
                             View project
                         </div>

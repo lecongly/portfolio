@@ -1,9 +1,11 @@
 import Link from 'next/link';
-import React from 'react';
+import React, {useContext} from 'react';
 import {BlogPost} from '../../types/IBlog';
 import Image from 'next/image';
+import {AppContext} from '../../context/AppContext';
 
 const BlogCard = ({createdAt, author, title, tags, url}: BlogPost) => {
+    const {cursorEnter, cursorLeave} = useContext(AppContext);
     const createdDate: Date = new Date(createdAt);
     const options: Intl.DateTimeFormatOptions = {
         year: 'numeric',
@@ -12,8 +14,11 @@ const BlogCard = ({createdAt, author, title, tags, url}: BlogPost) => {
     };
     return (
         <Link href={url}>
-            <div className="border">
-
+            <div
+                className="border"
+                onMouseEnter={() => cursorEnter()}
+                onMouseLeave={() => cursorLeave()}
+            >
                 <div className="w-full overflow-hidden rounded-lg mb-3 relative">
                     <Image className="rounded-lg" src={author.avatar} alt={title} width={680} height={480}/>
                 </div>

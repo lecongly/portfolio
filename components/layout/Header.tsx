@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import Link from 'next/link';
 import {Logo} from './Logo';
 import MenuBtn from './MenuBtn';
@@ -6,8 +6,10 @@ import {motion, AnimatePresence} from 'framer-motion';
 import Drawer from './Drawer';
 import {useTheme} from 'next-themes';
 import {useWindow} from 'hooks/useWindow';
+import {AppContext} from '../../context/AppContext';
 
 const Header = () => {
+    const {cursorEnter, cursorLeave} = useContext(AppContext);
     const [isOpen, setIsOpen] = useState(false);
     let {theme} = useTheme();
     const {scrollY} = useWindow();
@@ -19,12 +21,14 @@ const Header = () => {
         <motion.header
             className={`z-50 fixed top-0 left-0 w-full flex items-center flex-col duration-300  ${scrollY > 96 ? 'backdrop-blur-sm' : 'backdrop-blur-none'}`}>
             <nav className="container mx-auto px-5 h-24 flex items-center justify-between z-50">
-                <Link href="/">
+                <Link href="/"
+                      onMouseEnter={() => cursorEnter()}
+                      onMouseLeave={() => cursorLeave()}
+                >
                     <Logo
                         width="60"
                         height="60"
                         bgColor={logoColor}
-                        // initials={theme === 'light' ? '#FFFFFF' : '#1F1F1F'}
                     />
                 </Link>
                 <MenuBtn isOpen={isOpen} setIsOpen={setIsOpen}/>

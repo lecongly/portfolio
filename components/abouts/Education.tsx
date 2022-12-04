@@ -1,7 +1,9 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import EDUCATION from 'utils/educations';
+import {AppContext} from '../../context/AppContext';
 
 const Education = () => {
+    const {cursorEnter, cursorLeave} = useContext(AppContext);
     return (
         <div className="w-full xs:block sm:block md:grid lg:grid md:grid-cols-4 lg:grid-cols-6 my-10">
             <div>
@@ -16,8 +18,9 @@ const Education = () => {
                         rel="noreferrer noopener"
                         className="grid grid-cols-5 gap-x-2 rounded-md w-full
                         border-2 border-zinc-200 dark:border-zinc-700 overflow-hidden
-                        hover:scale-105 transition
-                        "
+                        hover:scale-105 transition"
+                        onMouseEnter={() => cursorEnter()}
+                        onMouseLeave={() => cursorLeave()}
                     >
                         <div className="w-full bg-zinc-50 dark:bg-zinc-800 flex items-center justify-center ">
                             <span className="text-4xl text-zinc-400 dark:text-zinc-600">{item.icon}</span>

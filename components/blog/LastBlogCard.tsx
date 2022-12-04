@@ -1,10 +1,12 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {BlogPost} from '../../types/IBlog';
 import Image from 'next/image';
 import Link from 'next/link';
 import {FiStar} from 'react-icons/fi';
+import {AppContext} from '../../context/AppContext';
 
 const LastBlogCard = ({createdAt, author, title, tags, url}: BlogPost) => {
+    const {cursorEnter, cursorLeave} = useContext(AppContext);
     const createdDate: Date = new Date(createdAt);
     const options: Intl.DateTimeFormatOptions = {
         year: 'numeric',
@@ -27,16 +29,18 @@ const LastBlogCard = ({createdAt, author, title, tags, url}: BlogPost) => {
                     {title}
                 </h2>
                 <span className="flex flex-row items-center justify-start mb-6">
-          {tags.map((tag, i) => (
-              <p key={i} className="text-sm mx-1 first:ml-0 font-normal text-neutral-500 dark:text-neutral-200">
-                  {tag}
-              </p>
-          ))}
-        </span>
+                  {tags.map((tag, i) => (
+                      <p key={i} className="text-sm mx-1 first:ml-0 font-normal text-neutral-500 dark:text-neutral-200">
+                          {tag}
+                      </p>
+                  ))}
+                </span>
                 <p className="text-neutral-500 dark:text-neutral-100 font-normal mb-6">{author.name}</p>
                 <Link href={url!}>
                     <div
                         className="xs:self-center sm:self-center md:self-start lg:self-start xl:self-start px-6 py-3 rounded-lg bg-violet-600 text-white"
+                        onMouseEnter={() => cursorEnter()}
+                        onMouseLeave={() => cursorLeave()}
                     >
                         Read more
                     </div>
