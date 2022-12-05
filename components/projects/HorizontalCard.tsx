@@ -14,7 +14,7 @@ interface Props {
 };
 const HorizontalCard = ({current, project, index, setCurrent}: Props) => {
     const {cursorEnter, cursorLeave} = useContext(AppContext);
-    const initX = (index % 2 === 0) ? 1000 : -1000;
+    const initX = (index % 2 === 0) ? '100vw' : '-100vw';
     return (
         <motion.div
             initial={{
