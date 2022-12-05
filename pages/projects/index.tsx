@@ -10,7 +10,12 @@ import {getAllFilesMetadata} from '../../lib/mdx';
 const ProjectsPage: NextPage<IProjects> = ({projects}) => {
     const [current, setCurrent] = useState<number | null>(null);
     return (
-        <Layout>
+        <Layout
+            metadata={{
+                title: 'Projects –– Le Cong Ly',
+                description: 'Software Engineer.'
+            }}
+        >
             <section className="pt-24 container mx-auto px-5">
                 <Title title="Projects"/>
                 <div className="flex flex-col items-center justify-center">

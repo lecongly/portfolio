@@ -17,7 +17,12 @@ interface Props {
 const Home: NextPage<Props> = ({blogData, projects}) => {
     const lastBlog = blogData[0];
     return (
-        <Layout>
+        <Layout
+            metadata={{
+                title: 'Le Cong Ly',
+                description: 'Software Engineer.',
+            }}
+        >
             <Banner/>
             <QuickAbout/>
             <Projects projects={projects}/>

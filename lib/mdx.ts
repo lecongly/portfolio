@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import {serialize} from 'next-mdx-remote/serialize';
-import {IProject, IProjects} from '../types/IProject';
+import {IProject} from '../types/IProject';
 
 const root = process.cwd();
 

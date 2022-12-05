@@ -6,11 +6,15 @@ import Skills from '@components/abouts/Skills';
 import Education from '@components/abouts/Education';
 import Experience from '@components/abouts/Experience';
 import Awards from '@components/abouts/Awards';
-import QuickAbout from '@components/abouts/QuickAbout';
 
 const About = () => {
     return (
-        <Layout>
+        <Layout
+            metadata={{
+                title: 'About –– Le Cong Ly',
+                description: 'Software Engineer.'
+            }}
+        >
             <section className="container mx-auto px-5 py-40 flex items-center justify-start">
                 <div className="w-full sm:w-5/6 md:w-4/6 h-full flex flex-col items-start justify-center">
                     <h1 className="mb-6 text-4xl font-medium tracking-wide relative after:absolute after:w-8 after:h-0.5 after:bg-zinc-900 after:top-2/4 after:translate-y-2/4 after:-right-10 after:rounded-lg">

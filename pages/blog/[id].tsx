@@ -20,7 +20,13 @@ const BlogDetailPage: NextPage<Props> = ({blogData}) => {
         day: 'numeric',
     };
     return (
-        <Layout>
+        <Layout
+            metadata={{
+                title: `${title} –– Blog –– Le Cong Ly`,
+                description: `${title} –– ${author.name}`,
+                date: createdDate.toLocaleDateString('en-US', options),
+            }}
+        >
 
             <section className="container mx-auto px-5 pt-24">
                 <div className="w-full md:w-3/4 lg:w-1/2 mx-auto">

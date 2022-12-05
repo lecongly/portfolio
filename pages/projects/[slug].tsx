@@ -15,6 +15,11 @@ type ProjectProps = {
 const ProjectDetailPage: NextPage<ProjectProps> = ({source, frontmatter}) => {
     return (
         <Layout
+            metadata={{
+                title: `${frontmatter.title} –– Le Cong Ly`,
+                description: frontmatter.description,
+                date: frontmatter.date,
+            }}
         >
             <section
                 className="container mx-auto px-5 pt-24 relative min-h-screen ">

@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {GetServerSideProps, InferGetServerSidePropsType, NextPage} from 'next';
+import {GetServerSideProps, NextPage} from 'next';
 import {getBlogs} from '../../server/blogs';
 import {BlogPost} from 'types/IBlog';
 import Layout from '@components/layout';
@@ -20,7 +20,12 @@ const BlogPage: NextPage<Props> = ({blogData}) => {
     );
 
     return (
-        <Layout>
+        <Layout
+            metadata={{
+                title: 'Blog –– Le Cong Ly',
+                description: 'Software Engineer.'
+            }}
+        >
             <section className="pt-24 container mx-auto px-5">
                 <Title title="Blog"/>
                 <LastBlogCard {...lastBlog}/>

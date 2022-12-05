@@ -2,14 +2,13 @@ import {useWindow} from 'hooks/useWindow';
 import React from 'react';
 import {useContext} from 'react';
 import {motion} from 'framer-motion';
-
 import {AppContext} from 'context/AppContext';
+import SEO from 'seo';
+import {layoutProps} from '../../types/layout';
 
-interface Props {
-    children: JSX.Element | JSX.Element[]
-}
 
-const Layout = ({children}: Props) => {
+const Layout = ({children, metadata}: layoutProps) => {
+    const {title, description, date} = metadata;
     const {cursor} = useContext(AppContext);
     const {mousePosition} = useWindow();
 
@@ -31,6 +30,7 @@ const Layout = ({children}: Props) => {
     };
     return (
         <>
+            <SEO title={title} description={description} date={date}/>
             <motion.div
                 className={'mx-auto w-full bg-white dark:bg-neutral-900'}
                 initial={{y: -50, opacity: 0}}

@@ -6,14 +6,12 @@ import Header from '@components/layout/Header';
 import Footer from '@components/layout/Footer';
 import {AppProvider} from 'context/AppContext';
 
-export default function App({Component, pageProps: {session, ...pageProps}, router}: AppProps) {
+export default function App({Component, pageProps: {...pageProps}, router}: AppProps) {
     return (
         <ThemeProvider enableSystem={true} attribute="class">
             <AppProvider>
                 <Header/>
-                <AnimatePresence
-                    initial={true}
-                >
+                <AnimatePresence initial={false}>
                     <Component {...pageProps} key={router.asPath}/>
                 </AnimatePresence>
                 <Footer/>
