@@ -70,10 +70,10 @@ const HorizontalCard = ({current, project, index, setCurrent}: Props) => {
                 >
                     {project.description}
                 </p>
-                <div className="flex flex-row items-center justify-start mt-3">
+                <div className="flex flex-row flex-wrap items-center justify-start mt-3">
                     {project.technologies.map((technology, i) => (
                         <p key={i}
-                           className=" px-2 py-1 mx-1 rounded-lg border-zinc-100 first:ml-0 last:mr-0 text-xs font-light ">
+                           className=" px-2 py-1 rounded-lg border-zinc-100 text-xs font-light ">
                             {technology}
                         </p>
                     ))}
