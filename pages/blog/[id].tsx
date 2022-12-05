@@ -1,11 +1,11 @@
 import React from 'react';
 import {GetServerSideProps, NextPage} from 'next';
-import {getBlogDetail} from '../../server/blogs';
-import {BlogDetail} from '../../types/IBlog';
+import Image from 'next/image';
 import parse from 'html-react-parser';
 import detail from './id.module.css';
-import Image from 'next/image';
 import Layout from '@components/layout';
+import {getBlogDetail} from 'lib/blogs';
+import {BlogDetail} from 'types/IBlog';
 
 interface Props {
     blogData: BlogDetail

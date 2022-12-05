@@ -1,12 +1,12 @@
 import React, {useState} from 'react';
 import {GetServerSideProps, NextPage} from 'next';
-import {getBlogs} from '../../server/blogs';
-import {BlogPost} from 'types/IBlog';
 import Layout from '@components/layout';
 import Title from '@components/core/Title';
 import LastBlogCard from '@components/blog/LastBlogCard';
 import BlogSearch from '@components/blog/BlogSearch';
 import BlogCard from '@components/blog/BlogCard';
+import {getBlogs} from 'lib/blogs';
+import {BlogPost} from 'types/IBlog';
 
 interface Props {
     blogData: BlogPost[]

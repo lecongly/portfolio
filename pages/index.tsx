@@ -1,13 +1,13 @@
+import {GetServerSideProps, NextPage} from 'next';
 import Layout from '@components/layout';
 import Banner from '@components/homepage/Banner';
 import Projects from '@components/projects/Projects';
 import QuickAbout from '@components/abouts/QuickAbout';
-import {GetServerSideProps, NextPage} from 'next';
-import {getBlogs} from '../server/blogs';
-import {BlogPost} from '../types/IBlog';
 import Blogs from '@components/blog/Blogs';
 import {getAllFilesMetadata} from 'lib/mdx';
-import {IProject} from '../types/IProject';
+import {getBlogs} from 'lib/blogs';
+import {IProject} from 'types/IProject';
+import {BlogPost} from 'types/IBlog';
 
 interface Props {
     blogData: BlogPost[];
