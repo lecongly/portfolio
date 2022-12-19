@@ -15,15 +15,17 @@ const BlogCard = ({createdAt, author, title, tags, url}: BlogPost) => {
     return (
         <Link href={url}>
             <div
-                className="border"
+                className="border rounded-lg overflow-hidden h-full"
                 onMouseEnter={() => cursorEnter()}
                 onMouseLeave={() => cursorLeave()}
             >
-                <div className="w-full overflow-hidden rounded-lg mb-3 relative">
-                    <Image className="rounded-lg" src={author.avatar} alt={title} width={680} height={480}/>
+                <div className="w-full mb-3 relative">
+                    <Image className="object-contain bg-white" src={author.avatar} alt={title}
+                           width={680}
+                           height={480}/>
                 </div>
                 <div
-                    className="md:col-span-2 lg:col-span-4 flex flex-col items-start justify-center px-5 mt-5 md:mt-0 lg:mt-0 xl:mt-0 ">
+                    className="md:col-span-2 lg:col-span-4 flex flex-col items-start justify-center p-5 mt-5 md:mt-0 lg:mt-0 xl:mt-0 ">
                     <p className="mb-3 font-medium text-sm text-violet-500">{createdDate.toLocaleDateString('en-US', options)}</p>
                     <h2 className="text-xl font-medium mb-3">{title}</h2>
                     <div className="mb-3 flex flex-row items-center justify-start">

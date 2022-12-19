@@ -34,7 +34,7 @@ const BlogDetailPage: NextPage<Props> = ({blogData}) => {
                     <div className="flex justify-center mb-4">
                         <div className="flex">
                             <Image
-                                className="rounded-full max-w-[50px] max-h-[50px] mb-4 mr-4 border"
+                                className="rounded-full max-w-[50px] max-h-[50px] mb-4 mr-4 border dark:border-blue-500 bg-white"
                                 src={author.avatar}
                                 alt="author pfp"
                                 width={100}
@@ -44,7 +44,7 @@ const BlogDetailPage: NextPage<Props> = ({blogData}) => {
                                 <p className="font-semibold text-xl"> {author.name} </p>
                                 <div className="flex flex-wrap">
                                     <li className="list-none font-normal text-sm md:mr-4 sm:mr-0">
-                                        {author.url}
+                                        <a href={author.url}>{author.url}</a>
                                     </li>
                                     <li className="list-none font-normal text-sm">
                                         {createdDate.toLocaleDateString('en-US', options)}

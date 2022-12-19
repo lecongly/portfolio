@@ -14,14 +14,14 @@ const LastBlogCard = ({createdAt, author, title, tags, url}: BlogPost) => {
         day: 'numeric',
     };
     return (
-        <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-6 border">
+        <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-6 border rounded-lg overflow-hidden">
             <div className="md:col-span-1 h-full flex items-center justify-center overflow-hidden relative md:border-r">
                 <div
                     className="absolute h-12 w-12 top-3 left-3 rounded-md bg-white dark:bg-neutral-900 z-40 flex items-center justify-center text-2xl">
                     <FiStar/>
                 </div>
                 <Image src={author.avatar} alt={author.name} width={680} height={480}
-                       className="object-contain w-full"/>
+                       className="object-contain w-full bg-white"/>
             </div>
             <div className="md:col-span-2 flex flex-col items-start justify-start p-5">
                 <p className="mb-6 font-semibold text-violet-500">{createdDate.toLocaleDateString('en-US', options)}</p>
