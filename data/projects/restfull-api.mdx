@@ -1,0 +1,269 @@
+---
+date: 'Oct 2022'
+title: 'RESTful API'
+description: 'This is a RESTful API built with Express and TypeScript, featuring authentication, product, category, payment and image routes.'
+cover_image: '/static/projects/RESTFulAPI/cover.png'
+github_url: 'https://github.com/lecongly/RESTful-API'
+categories: ['Personal Project']
+tags: ['API', 'Backend']
+technologies: ['Express.JS', 'Node.JS', 'TypeScript', 'MongoDB', 'Cloudinary']
+---
+
+<ProjectNavigation
+    routes={[
+        {name: 'About', id: 'about'},
+        {name: 'API [Auth]', id: 'auth'},
+        {name: 'API [User]', id: 'user'},
+        {name: 'API [Categories]', id: 'categories'},
+        {name: 'API [Products]', id: 'products'},
+        {name: 'API [Payments]', id: 'payments'},
+        {name: 'API [Image]', id: 'images'}]}
+/>
+
+<Introduction
+    title="RESTful API"
+    categories={['Personal Project']}
+/>
+
+<About
+    tags={['API', 'Backend']}
+    technologies={['Express.JS', 'Node.JS', 'TypeScript', 'MongoDB', 'Cloudinary']}
+    github_url="https://github.com/lecongly/RESTful-API"
+    summary={[
+        'This is a RESTful API built with Express and TypeScript, featuring authentication, product, category, payment and image routes.',
+    ]}
+/>
+
+<RoutesAPI
+    id="auth"
+    title="Authentication"
+    description="User authentication is done through using JSON Web Tokens (JWTs)."
+    request={[
+        {
+            title: 'Register',
+            method: ['POST'],
+            url: 'https://restful-api-lcl.up.railway.app/api/user/register',
+            requirements: ['name, email, password in req.body'],
+            resolve: 'Send account activation email to use.',
+        },
+        {
+            title: 'Activation',
+            method: ['POST'],
+            url: 'https://restful-api-lcl.up.railway.app/api/user/activation',
+            requirements: ['activation_token in req.body'],
+            resolve: 'Notification of activation content.',
+        },
+        {
+            title: 'Login',
+            method: ['POST'],
+            url: 'https://restful-api-lcl.up.railway.app/api/user/login',
+            requirements: ['email, password in req.body'],
+            resolve: 'Set refresh token and access token for Cookies client',
+        },
+        {
+            title: 'Refresh',
+            method: ['POST'],
+            url: 'https://restful-api-lcl.up.railway.app/api/user/refresh',
+            requirements: ['Token must be valid.', 'User must be authenticated'],
+            resolve: 'Set again access token for Cookies client',
+        },
+        {
+            title: 'Logout',
+            method: ['POST'],
+            url: 'https://restful-api-lcl.up.railway.app/api/user/logout',
+            requirements: ['Token must be valid.', 'User must be authenticated'],
+            resolve: 'Remove access token and refresh token from Cookies client',
+        },
+        {
+            title: 'Logout All',
+            method: ['POST'],
+            url: 'https://restful-api-lcl.up.railway.app/api/user/logout-all',
+            requirements: ['Token must be valid.', 'User must be authenticated'],
+            resolve: 'Logout a user all devices.',
+        },
+        {
+            title: 'Forgot',
+            method: ['POST'],
+            url: 'https://restful-api-lcl.up.railway.app/api/user/forgot',
+            requirements: ['email in req.body'],
+            resolve: 'Send email reset password to email.',
+        },
+    ]
+    }
+/>
+<RoutesAPI
+    id="user"
+    title="User"
+    description="User api"
+    request={[
+        {
+            title: 'User information',
+            method: ['GET'],
+            url: 'https://restful-api-lcl.up.railway.app/api/user/me',
+            requirements: ['Token must be valid.', 'User must be authenticated.'],
+            resolve: 'Json user information is retrieved from token.',
+        },
+        {
+            title: 'Update',
+            method: ['PATCH'],
+            url: 'https://restful-api-lcl.up.railway.app/api/user/update',
+            requirements: ['Token must be valid.', 'User must be authenticated.'],
+            resolve: 'Update the information of a specific user..',
+        },
+        {
+            title: 'Add to cart',
+            method: ['PATCH'],
+            url: 'https://restful-api-lcl.up.railway.app/api/user/add_cart',
+            requirements: ['Token must be valid.', 'User must be authenticated.', 'Product must not be previously stored.'],
+            resolve: 'Notification of activation content.',
+        },
+        {
+            title: 'Add to wish list',
+            method: ['PATCH'],
+            url: 'https://restful-api-lcl.up.railway.app/api/user/wish_list',
+            requirements: ['Token must be valid.', 'User must be authenticated.', 'Product must not be previously stored.'],
+            resolve: 'Notification of activation content.',
+        },
+    ]
+    }
+/>
+
+<RoutesAPI
+    id="categories"
+    title="Categories"
+    description="Categories API."
+    request={[
+        {
+            title: 'Get categories',
+            method: ['GET'],
+            url: 'https://restful-api-lcl.up.railway.app/api/categories',
+            requirements: ['End point without prerequisites.'],
+            resolve: 'Returns a list of all categories.',
+        },
+        {
+            title: 'Create category',
+            method: ['POST'],
+            url: 'https://restful-api-lcl.up.railway.app/api/categories',
+            requirements: [
+                'Token must be valid',
+                'User must be authenticated.',
+                'Only users with role = 1 (Administrator) can make this request.',
+            ],
+            resolve: 'Returns a message with the ID of the created category.',
+        },
+        {
+            title: 'Get specific category',
+            method: ['GET'],
+            url: 'https://restful-api-lcl.up.railway.app/api/categories/:id',
+            requirements: ['End point without prerequisites.'],
+            resolve: 'Returns an array with the specified category.',
+        },
+        {
+            title: 'Update / Delete category',
+            method: ['PUT', 'DELETE'],
+            url: 'https://restful-api-lcl.up.railway.app/api/categories/:id',
+            requirements: [
+                'Token must be valid',
+                'User must be authenticated.',
+                'Only users with role = 1 (Administrator) can make this request.',
+            ],
+            resolve: 'Delete, or update the information of the specific category.',
+        },
+    ]}
+/>
+<RoutesAPI
+    id="products"
+    title="Products"
+    description="Products API."
+    request={[
+        {
+            title: 'Get products',
+            method: ['GET'],
+            url: 'https://restful-api-lcl.up.railway.app/api/products',
+            requirements: ['End point without prerequisites.'],
+            resolve: 'Returns an array with all the categories stored in the database.',
+        },
+        {
+            title: 'Create product',
+            method: ['POST'],
+            url: 'https://restful-api-lcl.up.railway.app/api/product',
+            requirements: [
+                'Token must be valid',
+                'User must be authenticated.',
+                'Only users with role = 1 (Administrator) can make this request.',
+            ],
+            resolve: 'Returns a message with the ID of the product created.',
+        },
+        {
+            title: 'Get specific product',
+            method: ['GET'],
+            url: 'https://restful-api-lcl.up.railway.app/api/product/:id',
+            requirements: ['End point without prerequisites.'],
+        },
+        {
+            title: 'Update / Delete product',
+            method: ['PUT', 'DELETE'],
+            url: 'https://restful-api-lcl.up.railway.app/api/product/:id',
+            requirements: [
+                'Token must be valid',
+                'User must be authenticated.',
+                'Only users with role = 1 (Administrator) can make this request.',
+            ],
+            resolves: 'Delete, or update the information for the specific product.',
+        },
+    ]}
+/>
+<RoutesAPI
+    id="payments"
+    title="Payments"
+    description="Payments API."
+    request={[
+        {
+            title: 'Get payments',
+            method: ['GET'],
+            url: 'https://restful-api-lcl.up.railway.app/api/payments',
+            requirements: [
+                'Token must be valid',
+                'User must be authenticated.',
+                'Only users with role = 1 (Administrator) can make this request.',
+            ],
+            resolve: 'Returns the public_id and public_url of the image hosted on Cloudinary.',
+        },
+        {
+            title: 'Create payment',
+            method: ['POST'],
+            url: 'https://restful-api-lcl.up.railway.app/api/payments',
+            requirements: ['Token must be valid', 'User must be authenticated.'],
+            resolve: 'Delete the cloudinary image.',
+        },
+    ]}
+/>
+<RoutesAPI
+    id="images"
+    title="Images"
+    description="Images API."
+    request={[
+        {
+            title: 'Upload image',
+            method: ['POST'],
+            url: 'https://restful-api-lcl.up.railway.app/api/image/upload',
+            requirements: [
+                'Token must be valid',
+                'User must be authenticated.',
+                'Only users with role = 1 (Administrator) can make this request.',
+            ],
+            resolve: 'Returns the public_id and public_url of the image hosted on Cloudinary.',
+        },
+        {
+            title: 'Delete Image',
+            method: ['POST'],
+            url: 'https://restful-api-lcl.up.railway.app/api/image/destroy',
+            requirements: [
+                'Token must be valid',
+                'User must be authenticated.',
+                'Only users with role = 1 (Administrator) can make this request.',
+            ],
+            resolve: 'Delete the cloudinary image.',
+        },
+    ]}
+/>
