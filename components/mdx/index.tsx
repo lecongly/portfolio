@@ -6,6 +6,7 @@ import About from './About';
 import Challenges from './Challenges';
 import Wireframe from './Wireframe';
 import UserFlow from './UserFlow';
+import RoutesAPI from './RoutesAPI';
 
 const MDXComponents = {
     img: (props: any) => <Image
@@ -21,6 +22,7 @@ const MDXComponents = {
     ProjectNavigation,
     UserFlow,
     Wireframe,
+    RoutesAPI,
 };
 
 export default MDXComponents;

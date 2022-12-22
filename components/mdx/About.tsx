@@ -71,7 +71,6 @@ const About = ({summary, tags, technologies, external_url, github_url, host_url}
                         className="mr-3 hover:scale-105 duration-150"
                         onMouseEnter={() => cursorEnter()}
                         onMouseLeave={() => cursorLeave()}
-                        
                     >
                         View Link
                     </a>
