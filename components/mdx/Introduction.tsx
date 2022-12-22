@@ -27,7 +27,7 @@ const Introduction = ({title, categories, imageUrl}: Props) => {
                     width={1024}
                     height={720}
                     quality={100}
-                    className="aspect-video object-contain mx-auto"
+                    className="aspect-video object-contain mx-auto border rounded-lg object-cover"
                 />
             )}
         </section>

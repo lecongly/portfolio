@@ -31,14 +31,14 @@ const HorizontalCard = ({current, project, index, setCurrent}: Props) => {
             className="w-full my-5 block md:flex odd:flex-row even:flex-row-reverse items-center justify-between
   "
         >
-            <Link href={`/projects/${project.slug}`}>
+            <Link href={`/projects/${project.slug}`} className="w-full">
                 <div
                     className="flex items-center justify-center w-full h-full overflow-hidden rounded-lg"
                     onMouseEnter={() => cursorEnter()}
                     onMouseLeave={() => cursorLeave()}
                 >
                     <Image
-                        className={`duration-150 rounded-lg ${current === index ? 'scale-100' : 'scale-95'}`}
+                        className={`w-full max-h-80 object-cover overflow-hidden border duration-150 rounded-lg ${current === index ? 'scale-100' : 'scale-95'}`}
                         src={project.cover_image}
                         alt={project.title}
                         width={680}

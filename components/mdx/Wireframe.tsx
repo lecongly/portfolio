@@ -41,7 +41,7 @@ const Wireframe = ({frame, type}: Props) => {
                                 width={1024}
                                 height={720}
                                 quality={100}
-                                className="mx-auto object-contain"
+                                className="mx-auto object-contain border rounded-lg object-cover"
                             />
                         )}
                     </div>

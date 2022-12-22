@@ -1,3 +1,6 @@
+import {useContext} from 'react';
+import {AppContext} from '../../context/AppContext';
+
 type Props = {
     summary: Array<string>;
     tags: Array<string>;
@@ -8,6 +11,7 @@ type Props = {
 };
 
 const About = ({summary, tags, technologies, external_url, github_url, host_url}: Props) => {
+    const {cursorEnter, cursorLeave} = useContext(AppContext);
     return (
         <section className="my-6 text-zinc-900 dark:text-zinc-100" id="about">
             <h2 className="text-3xl font-bold mb-3">Summary</h2>
@@ -41,14 +45,20 @@ const About = ({summary, tags, technologies, external_url, github_url, host_url}
 
                 {github_url && (
                     <a href={github_url} target="_blank" rel="noreferrer noopener"
-                       className="mr-3 hover:scale-105 duration-150">
+                       className="mr-3 hover:scale-105 duration-150"
+                       onMouseEnter={() => cursorEnter()}
+                       onMouseLeave={() => cursorLeave()}
+                    >
                         Github link
                     </a>
                 )}
 
                 {host_url && (
                     <a href={host_url} target="_blank" rel="noreferrer noopener"
-                       className="mr-3 hover:scale-105 duration-150">
+                       className="mr-3 hover:scale-105 duration-150"
+                       onMouseEnter={() => cursorEnter()}
+                       onMouseLeave={() => cursorLeave()}
+                    >
                         View Demo
                     </a>
                 )}
@@ -59,6 +69,9 @@ const About = ({summary, tags, technologies, external_url, github_url, host_url}
                         target="_blank"
                         rel="noreferrer noopener"
                         className="mr-3 hover:scale-105 duration-150"
+                        onMouseEnter={() => cursorEnter()}
+                        onMouseLeave={() => cursorLeave()}
+                        
                     >
                         View Link
                     </a>
