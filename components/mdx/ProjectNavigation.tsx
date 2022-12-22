@@ -11,7 +11,8 @@ type Route = {
 
 const ProjectNavigation = ({routes}: Props) => {
     return (
-        <div className="fixed hidden lg:flex flex-col justify-center items-start top-1/2 -translate-y-1/2 left-3 z-40">
+        <div
+            className="fixed hidden lg:flex flex-col justify-center items-start top-1/2 -translate-y-1/2 p-3 z-40 backdrop-blur-sm rounded-lg overflow-hidden">
             {routes.map((route, i) => (
                 <Link
                     key={i}
