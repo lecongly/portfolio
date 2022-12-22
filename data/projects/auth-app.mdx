@@ -1,0 +1,52 @@
+---
+date: 'Sep 2022'
+title: 'Basic Auth App'
+description: 'Next.js & Express Basic Authentication Project.'
+cover_image: '/static/projects/AuthApp/cover.png'
+github_url: 'https://github.com/lecongly/auth-app'
+host_url: 'https://auth-app-lcl.vercel.app/'
+categories: ['Personal Project']
+tags: ['Web Development', 'Fullstack', 'MERN']
+technologies: ['NextJS', 'Express' , 'TypeScript', 'TailwindCSS']
+---
+<ProjectNavigation
+    routes={[
+        {name: 'About', id: 'about'},
+        {name: 'Challenges', id: 'challenges'},
+        {name: 'Wireframes', id: 'wireframes'},
+    ]}
+/>
+
+<Introduction
+    categories={['Personal Project']}
+    title="Basic Auth App"
+    imageUrl="/static/projects/AuthApp/cover.png"
+/>
+
+<About
+    tags={['Web Development', 'Fullstack', 'MERN']}
+    technologies={['NextJS', 'Express', 'TypeScript', 'TailwindCSS']}
+    github_url="https://github.com/lecongly/auth-app"
+    host_url="https://auth-app-lcl.vercel.app/"
+    summary={[
+        'I developed a web application using NextJS for the front-end and Express for the back-end. One of the key features of the application was basic authentication, which I implemented using jsonwebtoken. This involved setting up routes for logging in and out, storing hashed passwords in a database, and using middleware to protect certain routes.',
+    ]}
+/>
+
+
+<Challenges
+    principal="I encountered some challenges while implementing the authentication system."
+    specifics={[
+        'Figuring out how to properly hash and salt passwords for security. However, I was able to overcome these challenges through researching best practices and seeking guidance from more experienced developers..',
+        'In addition, I have difficulty using email for users to authenticate their accounts when registering.',
+    ]}
+/>
+<Wireframe
+    type="web"
+    frame={[
+        {image: '/static/projects/AuthApp/homepage.png', imageTitle: 'Home Page'},
+        {image: '/static/projects/AuthApp/signup.png', imageTitle: 'Sign Up Page'},
+        {image: '/static/projects/AuthApp/mail.png', imageTitle: 'Verification Email'},
+        {image: '/static/projects/AuthApp/userprofile.png', imageTitle: 'User Profile Page'},
+    ]}
+/>
