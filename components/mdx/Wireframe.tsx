@@ -29,10 +29,10 @@ const Wireframe = ({frame, type}: Props) => {
                             <Image
                                 src={wireframe.image}
                                 alt={wireframe.image}
-                                width={1024}
-                                height={492}
+                                width={323}
+                                height={662}
                                 quality={100}
-                                className="mx-auto object-contain"
+                                className="mx-auto border rounded-lg object-cover"
                             />
                         ) : (
                             <Image
@@ -41,7 +41,7 @@ const Wireframe = ({frame, type}: Props) => {
                                 width={1024}
                                 height={720}
                                 quality={100}
-                                className="mx-auto object-contain border rounded-lg object-cover"
+                                className="mx-auto border rounded-lg object-cover"
                             />
                         )}
                     </div>

@@ -1,0 +1,50 @@
+---
+date: 'Dec 2022'
+title: 'Landing Page Career'
+description: 'A landing page built with Vite, React, Tailwind CSS, TypeScript and Frame Motion.'
+cover_image: '/static/projects/LandingPageCareer/cover.png'
+github_url: 'https://github.com/lecongly/landing-page-career'
+host_url: 'https://landing-page-career.vercel.app'
+categories: ['Personal Project']
+tags: ['Web Development', 'Landing page']
+technologies: ['Vite', 'React' , 'TypeScript', 'Tailwind CSS', 'Frame Motion']
+---
+<ProjectNavigation
+    routes={[
+        {name: 'About', id: 'about'},
+        {name: 'Wireframes', id: 'wireframes'},
+    ]}
+/>
+
+<Introduction
+    categories={['Personal Project']}
+    title="Landing Page Career"
+    imageUrl="/static/projects/LandingPageCareer/cover.png"
+/>
+
+<About
+    tags={['Web Development', 'Landing page']}
+    technologies={['Vite', 'React', 'TypeScript', 'Tailwind CSS', 'Frame Motion']}
+    github_url="https://github.com/lecongly/landing-page-career"
+    host_url="https://landing-page-career.vercel.app"
+    summary={[
+        'A landing page built with Vite, React, Tailwind CSS, TypeScript and Frame Motion',
+    ]}
+/>
+
+<Wireframe
+    type="web"
+    frame={[
+        {image: '/static/projects/LandingPageCareer/webpage.gif', imageTitle: 'Web Page'},
+    ]}
+/>
+
+<Wireframe
+    type="mobile"
+    frame={[
+        {
+            image: '/static/projects/LandingPageCareer/mobilepage.gif',
+            imageTitle: 'Responsive mobile view by Tailwind CSS'
+        },
+    ]}
+/>
