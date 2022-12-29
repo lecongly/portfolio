@@ -1,0 +1,50 @@
+---
+date: 'Dec 15, 2022'
+title: 'Note Application'
+description: 'A web-based note taking app with features including authentication, the ability to create and manage boards, sections, and tasks, the ability to mark tasks as favorites, and the ability to drag and drop tasks between sections and boards.'
+cover_image: '/static/projects/NoteApp/cover.png'
+github_url: 'https://github.com/lecongly/note-app'
+host_url: 'https://note-app-lecongly.vercel.app/'
+categories: ['Personal Project']
+tags: ['Note App', 'Web Development', 'Full-stack']
+technologies: ['React', 'TypeScript', 'Material UI', 'Redux Toolkit', 'Express', 'JavaScript', 'MongoDB']
+---
+
+<ProjectNavigation
+    routes={[
+        {name: 'About', id: 'about'},
+        {name: 'Challenges', id: 'challenges'},
+        {name: 'Wireframes', id: 'wireframes'},
+    ]}
+/>
+
+<Introduction
+    categories={['Personal Project']}
+    title="Note Application"
+    imageUrl="/static/projects/NoteApp/cover.png"
+/>
+
+<About
+    tags={['Note App', 'Web Development', 'Full-stack']}
+    technologies={['React', 'TypeScript', 'Material UI', 'Redux Toolkit', 'Express', 'JavaScript', 'MongoDB']}
+    github_url="https://github.com/lecongly/note-app"
+    summary={[
+        'A web-based note taking app with features including authentication, the ability to create and manage boards, sections, and tasks, the ability to mark tasks as favorites, and the ability to drag and drop tasks between sections and boards',
+    ]}
+/>
+<Challenges
+    principal="The first project I applied material ui to build UI for app."
+    specifics={[
+        'A personal project, so I managed both back-end and front-end. Implemented a REST API using Express.js to handle server-side logic and interactions with database NoSQL MongoDB. Designed and built the client interface using React and TypeScript incorporating Material UI for styling and layout.',
+        'Used Git to track progress of project, Postman to test respond REST API, Vercel to deploy client and Railway to deploy server my application.',
+    ]}
+/>
+<Wireframe
+    type="web"
+    frame={[
+        {image: '/static/projects/NoteApp/authentication.png', imageTitle: 'Authentication Page'},
+        {image: '/static/projects/NoteApp/addNewBoard.png', imageTitle: 'Add New Board'},
+        {image: '/static/projects/NoteApp/addNewSection.png', imageTitle: 'Add New Section'},
+        {image: '/static/projects/NoteApp/addNewTask.png', imageTitle: 'Add New Task'}
+    ]}
+/>
