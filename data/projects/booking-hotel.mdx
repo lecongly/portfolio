@@ -1,11 +1,51 @@
 ---
 date: 'Oct 26, 2022'
 title: 'Booking Hotel'
-description: 'Booking hotel is web for booking bla bla'
-cover_image: '/assets/images/banner.png'
+description: 'A web-based booking hotels, features authentication, a list of hotels, search by city, ratings, and the ability to book a hotel and partner by new hotel. '
+cover_image: '/static/projects/BookingHotel/cover.png'
 github_url: 'https://github.com/htoann/Hotel-Booking'
-host_url: 'https://bookinghotels.vercel.app/'
-categories: ['Side Project']
-tags: ['Booking', 'Web Development']
+host_url: 'https://www.bookingroom.tech/'
+categories: ['Team Project']
+tags: ['Booking', 'Web Development', 'Full-stack']
 technologies: ['NextJS', 'ExpressJS', 'TypeScript', 'TailwindCSS', 'Redux-toolkit', 'RTK-Query']
 ---
+
+<ProjectNavigation
+    routes={[
+        {name: 'About', id: 'about'},
+        {name: 'Challenges', id: 'challenges'},
+        {name: 'Wireframes', id: 'wireframes'},
+    ]}
+/>
+
+<Introduction
+    categories={['Team Project']}
+    title="Booking Hotel Application"
+    imageUrl="/static/projects/BookingHotel/cover.png"
+/>
+
+<About
+    tags={['Booking', 'Web Development', 'Full-stack']}
+    technologies={['NextJS', 'ExpressJS', 'TypeScript', 'TailwindCSS', 'Redux-toolkit', 'RTK-Query']}
+    github_url="https://github.com/htoann/Hotel-Booking"
+    summary={[
+        'A web-based booking hotels, features authentication, a list of hotels, search by city, ratings, and the ability to book a hotel and partner by new hotel',
+    ]}
+/>
+<Challenges
+    principal="Having difficulty in teamwork, this is one of the hardest points for me in this project."
+    specifics={[
+        'Worked with agile methodologies to track progress of project by using Git: created a project, created and labeled issues, review code, pull request code for new feature.',
+        'Making requests to the API to retrieve data and perform certain actions, and supporting my teammates when encountering bugs while building the app.',
+    ]}
+/>
+<Wireframe
+    type="web"
+    frame={[
+        {image: '/static/projects/BookingHotel/hotelDetailPage.png', imageTitle: 'Hotel Detail Page'},
+        {image: '/static/projects/BookingHotel/reviews.png', imageTitle: 'Reviews Hotel'},
+        {image: '/static/projects/BookingHotel/userSetting.png', imageTitle: 'User Setting'},
+        {image: '/static/projects/BookingHotel/searchPage.png', imageTitle: 'Search Page'},
+        {image: '/static/projects/BookingHotel/becomePartner.png', imageTitle: 'Become Partner'},
+    ]}
+/>
